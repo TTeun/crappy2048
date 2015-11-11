@@ -25,6 +25,8 @@ function Ai() {
         //              Method returns true if you can move to that direction, false otherwise.
 
         // sample AI:
-        return 0;
+        for (i=0;i<10;i++){
+            return (i%4);
+        }       
     }
 }
