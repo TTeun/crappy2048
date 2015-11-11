@@ -41,7 +41,7 @@ function Ai() {
 
         for (i=0;i<4;i++){
             if (grid.move(i)){
-                return free(grid)%2;
+                return ((free(grid)) %2);
             }   
         }
 
