@@ -39,7 +39,7 @@ function Ai() {
 
         for (i=0;i<4;i++){
             if (grid.move(i)){
-                return (i);
+                return (free % 4);
             }   
         }
 
