@@ -23,18 +23,11 @@ function Ai() {
         //              This changes the state of the grid object, so you should probably copy() the grid before using this.
         //              Naturally the modified state doesn't contain information about new tiles.
         //              Method returns true if you can move to that direction, false otherwise.
-
-        var free = 0;
-
-        for (i = 0; i < 4; i++){
-            for (j = 0; j < 4; j++){
-                if (grid.cells[i][j] == null){
-                    free = free  +1;
-                }
-            }
+        for (i=0;i<4;i++){
+            if (grid.move(i)){
+                return i;
+            }   
         }
-        return (free % 4);
-
 
     }
 }
