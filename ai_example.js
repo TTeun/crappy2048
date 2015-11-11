@@ -26,7 +26,7 @@ function Ai() {
 
         // sample AI:
         for (i=0;i<10;i++){
-            return (i%4);
+            return (2);
         }       
     }
 }
