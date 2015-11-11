@@ -24,7 +24,13 @@ function Ai() {
         //              Naturally the modified state doesn't contain information about new tiles.
         //              Method returns true if you can move to that direction, false otherwise.
         
-        newgrid = grid.copy();
+        grid0 = grid.copy();
+        grid1 = grid.copy();
+        grid2 = grid.copy();
+        grid3 = grid.copy();
+
+        
+
         for (i=0;i<4;i++){
             if (grid.move(i)){
                 return i;
