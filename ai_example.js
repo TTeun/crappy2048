@@ -7,6 +7,18 @@ function Ai() {
         // This method is called when the game is reset.
     }
 
+    this.free = function(grid){
+        var free = 0;
+        for (i=0;i<4;i++){
+            for (j=0;j<4;j++){
+                if (grid.cells[i][j] == null){
+                    free = free + 1;
+                }
+            }
+        }
+        return free;        
+    }
+
     this.step = function(grid) {
         // This method is called on every update.
         // Return one of these integers to move tiles on the grid:
@@ -25,19 +37,11 @@ function Ai() {
         //              Method returns true if you can move to that direction, false otherwise.
         
         tgrid = grid.copy();
-        var free = 0;
-        for (i=0;i<4;i++){
-            for (j=0;j<4;j++){
-                if (grid.cells[i][j] == null){
-                    free = free + 1;
-                }
-            }
-        }
 
 
         for (i=0;i<4;i++){
             if (grid.move(i)){
-                return i;
+                return free(grid);
             }   
         }
 
